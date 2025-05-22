@@ -1,6 +1,3 @@
-# Quetzal-
-Quetzal es una pagina diseñada especialmente para personas angloparlantes, con la finalidad de mostrar a través de los mexicanismos las riquezas lingüísticas que ofrece el Español de México
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,7 +28,7 @@ Quetzal es una pagina diseñada especialmente para personas angloparlantes, con 
     }
 
     .logo {
-      width: 600px;
+      width: 500px;
       margin: 20px auto;
     }
 
@@ -63,7 +60,7 @@ Quetzal es una pagina diseñada especialmente para personas angloparlantes, con 
     }
 
     .mapa {
-      width: 300px;
+      width: 800px;
       margin: auto;
       position: relative;
     }
@@ -95,6 +92,34 @@ Quetzal es una pagina diseñada especialmente para personas angloparlantes, con 
     .ejercicio select {
       padding: 5px;
     }
+    .logo-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
 
   </style>
 </head>
@@ -105,9 +130,12 @@ Quetzal es una pagina diseñada especialmente para personas angloparlantes, con 
 <!-- Página 1 - Bienvenida -->
 <div class="section active" id="bienvenida">
   <h1>¡Bienvenido a los Mexicanismos!</h1>
-  <img class="logo" src="quetzall-removebg.jpg" style="mix-blend-mode: multiply;">
+  <div class="logo-container" onclick="mostrar('presentacion')">
+    <img class="logo" src="quetzall-removebg.jpg" style="mix-blend-mode: multiply;">
+    <span class="tooltip">¡Vamos!</span>
+  </div>
+  
  
-  <button onclick="mostrar('presentacion')">Comenzar</button>
 </div>
 
 <!-- Página 2 - Presentación -->
@@ -138,7 +166,7 @@ Quetzal es una pagina diseñada especialmente para personas angloparlantes, con 
 <div class="section" id="mapa">
   <h2>Explora los estados de México</h2>
   <div class="mapa" onmouseover="mostrarPopup()" onmouseout="ocultarPopup()">
-    <img src="06-mexico_mapa_de_los_estados_s.jpg" width="300" alt="Mapa México">
+    <img src="06-mexico_mapa_de_los_estados_s.jpg" width="800" alt="Mapa México">
     <div class="popup" id="popup" style="top: 20px; left: 100px;">
       <strong>Estado de México</strong><br>
       Lugares históricos: Teotihuacán, Toluca, Valle de Bravo.<br>
